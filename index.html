@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>developer-portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Rubik&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: grey;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: azure;
+        }
+
+        nav ul li a:hover {
+            color: brown;
+            font-size: 1.5rem;
+        }
+
+        .left {
+            font-size: 1.7rem;
+        }
+
+        .firstsection {
+            display: flex;
+            justify-content: space-around;
+            margin: 80px 0;
+        }
+
+        .firstsection>div {
+            width: 30%;
+        }
+
+        .leftsection {
+            font-size: 2rem;
+            margin: 70px 0;
+        }
+
+        .rightsection img {
+            width: 80%;
+
+        }
+
+        .purple {
+            color: brown;
+        }
+
+        .secondsection {
+            max-width: 80vw;
+            margin: auto;
+            height: 45vh;
+        }
+
+        .yellow {
+            color: gray;
+        }
+
+        .tab-title {
+            display: flex;
+            margin: 20px 0 40px;
+        }
+
+        .tab-links {
+            font-size: 18px;
+            margin-right: 50px;
+            font-weight: 500;
+            cursor: pointer;
+            position: relative;
+            color: blue;
+        }
+
+        .tab-links::after {
+            content: '';
+            width: 0;
+            height: 3px;
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            transition: 0.5s;
+        }
+
+        .tab-contents {
+            position: right;
+        }
+
+        .thirdsection {
+            max-width: 80vw;
+            margin: auto;
+            height: 50vh;
+        }
+
+        .services h2 {
+            margin-bottom: 5rem;
+        }
+
+        .services-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .services-container .services-box {
+            flex: 1 1 30rem;
+            background: grey;
+            padding: 2px 4px;
+            border-radius: 2rem;
+            text-align: center;
+            border: 2rem solid var(--bg-color);
+        }
+
+        .services-box i {
+            font-size: 15px;
+            color: bisque;
+        }
+
+        .services-box h3 {
+            font-size: 15px;
+        }
+
+        .services-box p {
+            font-size: 15px;
+            margin: 10px 25px;
+        }
+
+        #more {
+            display: none;
+        }
+
+
+        .fourthsection {
+            max-width: 80vw;
+            margin: auto;
+            height: 70vh;
+        }
+
+
+
+
+        /* Style the contact form */
+        #contact-form {
+            display: grid;
+            gap: 10px;
+        }
+
+        #contact-form input,
+        #contact-form textarea,
+        #contact-form button {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        #contact-form button {
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+
+    <script>
+        function myFunction1() {
+            var dots = document.getElementById("1dots");
+            var moreText = document.getElementById("1more");
+            var btnText = document.getElementById("1myBtn");
+
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Read more";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "Read less";
+                moreText.style.display = "inline";
+            }
+        }
+
+        function myFunction2() {
+            var dots = document.getElementById("2dots");
+            var moreText = document.getElementById("2more");
+            var btnText = document.getElementById("2myBtn");
+
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Read more";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "Read less";
+                moreText.style.display = "inline";
+            }
+        }
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const contactForm = document.getElementById("contact-form");
+            const successMessage = document.getElementById("success-message");
+
+            contactForm.addEventListener("submit", async (e) => {
+                e.preventDefault();
+
+                const name = document.getElementById("name").value;
+                const email = document.getElementById("email").value;
+                const message = document.getElementById("message").value;
+
+
+                if (!name || !email || !message) {
+                    alert("Please fill in all fields.");
+                    return;
+                }
+
+                try {
+                  
+                    successMessage.classList.remove("hidden");
+                    contactForm.reset();
+                } catch (error) {
+                    console.error("Error sending message:", error);
+                    alert("An error occurred. Please try again later.");
+                }
+            });
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Shahinoor-Portfolio</div>
+            <div class="right"></div>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Projects</a></li>
+                <li><a href="">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="firstsection">
+            <div class="leftsection">hi, my name is <span class="purple">Shahinoor</span>
+                <div>and i am a passionate</div>
+                <span id="element"></span>
+            </div>
+            <div class="rightsection">
+                <img src="dev.png" alt="developerimg">
+            </div>
+        </section>
+        <hr>
+        <section class="secondsection">
+            <h1 class="subtitle">About Me</h1>
+            <p>Being a web enthusiast, along with this I am a good team player and have leadership qualities. Apart from
+                profession my hobbies are Henna Art, Singing and watching movies</p>
+            <div class="tab-title">
+                <p class="tab-links active-link">Skills</p>
+                <ul>
+                    <li><span>UI/UX</span><br>Designing web/app interface</li>
+                    <li><span>Web Development</span><br> web App Development</li>
+                    <li><span>App Development</span><br>Building Andriod/ios Apps</li>
+                </ul>
+
+                <p class="tab-links">Education</p>
+                <ul>
+                    <li><span>10th</span><br>M.k school</li>
+                    <li><span>12th</span><br>K.M Agrwal</li>
+                    <li><span>Graduation</span><br>Aiktc School of Engineering</li>
+                </ul>
+            </div>
+        </section>
+        <hr>
+        <section class="thirdsection" id="services">
+            <h2 class="heading">Our<span>Projects</span></h2>
+            <div class="services-container">
+                <div class="services-box">
+                    <i class='bx bx-code'></i>
+                    <h3>Hotel Management website</h3>
+                    <p>hotel Management website with CRM is a web application.
+                        I develope for efficient hotel operation and enhance customer service.
+                        <span id="1dots">...</span><span id="1more">Its features a reservation system for online
+                            bookings,
+                            a CRM module for customer information management,and a room inventory system for tracking
+                            availability and maintence request.
+
+                        </span>
+                    </p>
+                    <button onclick="myFunction1()" id="1myBtn">Read more</button>
+                </div>
+
+                <div class="services-box">
+                    <h3>Chatify App</h3>
+                    <p>Chatify App is a revolutionary social networking platform designed to
+                        enhance the way we connect and communicate with others.
+                        <span id="2dots">...</span><span id="2more">with its unique features,
+                            Chatify App offers a seamless chatting experience, enabling users to post messages
+                            and connect with friends and the wider social world.
+                        </span>
+                    </p>
+                    <button onclick="myFunction2()" id="2myBtn">Read more</button>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section class="fourthsection" id="contact">
+            <div class="container">
+                <h1>Contact</h1>
+                <p>You can reach me at example@email.com</p>
+                <form id="contact-form">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <textarea id="message" placeholder="Your Message" rows="4" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+                <p id="success-message" class="hidden">Message sent successfully!</p>
+            </div>
+        </section>
+
+    </main>
+    <!-- Setup and start animation! -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['web developer,graphic designer.'],
+            typeSpeed: 50,
+        });
+    </script>
+</body>
+
+</html>
